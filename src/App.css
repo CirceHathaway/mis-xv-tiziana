@@ -6,9 +6,9 @@
     --silver-ice: #dbeafe;
     --silver-dark: #94a3b8;
     --text-color: #ffffff;
-    --text-muted: #e2e8f0;
+    --text-muted: #f1f5f9;
 
-    /* Gradiente metálico de alto contraste para efecto espejo/plata real */
+    /* Gradiente original intacto para SplashScreen y "Mis XV Años" del Hero */
     --realistic-silver-gradient: linear-gradient(
         115deg,
         #94a3b8 0%,
@@ -17,6 +17,17 @@
         #ffffff 64%,
         #e2e8f0 80%,
         #94a3b8 100%
+    );
+
+    /* NUEVO: Plateado mucho más luminoso y legible para el resto de la invitación */
+    --bright-silver-gradient: linear-gradient(
+        115deg,
+        #dbeafe 0%,
+        #ffffff 20%,
+        #e2e8f0 42%,
+        #ffffff 62%,
+        #f0f9ff 82%,
+        #ffffff 100%
     );
 
     /* Acabado cristal esmerilado para tarjetas */
@@ -138,7 +149,7 @@ body {
     margin-top: -100px;
 }
 
-/* NEÓN BLANCO CRISTAL PARA EL NOMBRE */
+/* NEÓN BLANCO CRISTAL PARA EL NOMBRE (SIN CAMBIOS) */
 .hero h1 { 
     font-family: 'Great Vibes', cursive; 
     font-size: 8.5rem; 
@@ -161,13 +172,13 @@ body {
     font-size: 1.3rem; 
     line-height: 1.5; 
     font-style: italic; 
-    color: rgba(255, 255, 255, 0.95);
-    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.45);
+    color: #ffffff;
+    text-shadow: 0 0 14px rgba(255, 255, 255, 0.38), 0 2px 8px rgba(0, 0, 0, 0.5);
     margin: 20px 0 0 0;
 }
-.hero-quote i { color: #ffffff; margin: 0 6px; filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.7)); }
+.hero-quote i { color: #ffffff; margin: 0 6px; filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.85)); }
 
-/* --- TÍTULO SECUNDARIO Y CORONA DEL HERO --- */
+/* --- TÍTULO SECUNDARIO Y CORONA DEL HERO (SIN CAMBIOS) --- */
 .hero .top-title { 
     font-family: 'Cinzel Decorative', serif; 
     font-weight: 700; 
@@ -349,7 +360,10 @@ body {
     font-size: 4.5rem;
     color: #ffffff;
     margin: 0;
-    text-shadow: 0 0 18px rgba(255, 255, 255, 0.45), 0 2px 6px rgba(0, 0, 0, 0.4);
+    text-shadow:
+        0 0 10px rgba(255, 255, 255, 0.7),
+        0 0 26px rgba(219, 234, 254, 0.55),
+        0 2px 6px rgba(0, 0, 0, 0.4);
 }
 
 .countdown { display: flex; justify-content: center; gap: 20px; margin: 40px 0; flex-wrap: wrap; }
@@ -361,10 +375,10 @@ body {
     width: 120px;
     height: 120px;
     background: linear-gradient(145deg, rgba(255, 255, 255, 0.16) 0%, rgba(255, 255, 255, 0.04) 100%);
-    border: 2px solid rgba(255, 255, 255, 0.65);
+    border: 2px solid rgba(255, 255, 255, 0.75);
     border-radius: 50%;
     box-shadow:
-        0 0 24px rgba(255, 255, 255, 0.28),
+        0 0 24px rgba(255, 255, 255, 0.32),
         inset 0 2px 10px rgba(255, 255, 255, 0.25);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
@@ -375,15 +389,19 @@ body {
     font-size: 2.4rem;
     color: #ffffff;
     line-height: 1;
-    text-shadow: 0 0 14px rgba(255, 255, 255, 0.7);
+    text-shadow:
+        0 0 8px rgba(255, 255, 255, 0.9),
+        0 0 20px rgba(219, 234, 254, 0.7);
 }
 .time-label {
     font-family: 'Montserrat', sans-serif;
     font-size: 0.75rem;
+    font-weight: 500;
     text-transform: uppercase;
     margin-top: 5px;
     letter-spacing: 1px;
-    color: var(--text-muted);
+    color: #ffffff;
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
 }
 
 /* BOTONES PLATEADO ESPEJO CON BARRIDO DE LUZ */
@@ -465,6 +483,12 @@ body {
 }
 .section.visible { opacity: 1; transform: translateY(0); }
 
+.section p {
+    color: #f8fafc;
+    line-height: 1.6;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.25);
+}
+
 .section h2 {
     font-family: 'Cinzel Decorative', serif;
     font-size: 2.2rem;
@@ -472,16 +496,18 @@ body {
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 2px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.55);
     display: inline-block;
     padding-bottom: 10px;
-    background: var(--realistic-silver-gradient);
+    background: var(--bright-silver-gradient);
     background-size: 240% auto;
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
     animation: silverShimmer 6.5s linear infinite;
-    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.3));
+    filter:
+        drop-shadow(0 0 6px rgba(255, 255, 255, 0.6))
+        drop-shadow(0 0 16px rgba(219, 234, 254, 0.45));
 }
 
 .corner-deco { position: absolute; padding: 0; background-color: transparent; z-index: 20; }
@@ -497,34 +523,53 @@ body {
 .corner-bottom-right { bottom: -35px; right: -45px; }
 
 .big-date-container { display: flex; flex-direction: column; align-items: center; gap: 5px; margin-bottom: 20px; }
-.date-day-name { font-family: 'Montserrat', sans-serif; font-size: 1.5rem; letter-spacing: 5px; text-transform: uppercase; color: #ffffff; }
+.date-day-name {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 500;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: #ffffff;
+    text-shadow: 0 0 12px rgba(255, 255, 255, 0.6);
+}
 .date-number-big {
     font-family: 'Cinzel Decorative', serif;
     font-size: 7rem;
     line-height: 1;
     margin: 10px 0;
-    background: var(--realistic-silver-gradient);
+    background: var(--bright-silver-gradient);
     background-size: 240% auto;
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
     animation: silverShimmer 6s linear infinite;
-    filter: drop-shadow(0 0 16px rgba(255, 255, 255, 0.45));
+    filter:
+        drop-shadow(0 0 10px rgba(255, 255, 255, 0.7))
+        drop-shadow(0 0 24px rgba(219, 234, 254, 0.55));
 }
-.date-month-year { font-family: 'Pinyon Script', cursive; font-size: 2.5rem; color: #ffffff; text-shadow: 0 0 12px rgba(255, 255, 255, 0.35); }
+.date-month-year {
+    font-family: 'Pinyon Script', cursive;
+    font-size: 2.5rem;
+    color: #ffffff;
+    text-shadow:
+        0 0 10px rgba(255, 255, 255, 0.65),
+        0 0 22px rgba(219, 234, 254, 0.45);
+}
 .time-box-styled {
     margin-top: 20px;
     padding: 10px 40px;
-    border-top: 2px solid rgba(255, 255, 255, 0.75);
-    border-bottom: 2px solid rgba(255, 255, 255, 0.75);
+    border-top: 2px solid rgba(255, 255, 255, 0.85);
+    border-bottom: 2px solid rgba(255, 255, 255, 0.85);
     display: inline-block;
-    box-shadow: 0 0 16px rgba(255, 255, 255, 0.14);
+    box-shadow: 0 0 18px rgba(255, 255, 255, 0.2);
 }
 .time-text {
     font-family: 'Cinzel Decorative', serif;
     font-size: 2rem;
     color: #ffffff;
-    text-shadow: 0 0 14px rgba(255, 255, 255, 0.55);
+    text-shadow:
+        0 0 8px rgba(255, 255, 255, 0.85),
+        0 0 20px rgba(219, 234, 254, 0.6);
 }
 
 .venue-name {
@@ -533,16 +578,30 @@ body {
     font-weight: 700;
     text-transform: uppercase;
     margin: 10px 0;
-    background: var(--realistic-silver-gradient);
+    background: var(--bright-silver-gradient);
     background-size: 240% auto;
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
     animation: silverShimmer 6.5s linear infinite;
-    filter: drop-shadow(0 0 12px rgba(255, 255, 255, 0.35));
+    filter:
+        drop-shadow(0 0 8px rgba(255, 255, 255, 0.65))
+        drop-shadow(0 0 20px rgba(219, 234, 254, 0.5));
 }
-.venue-subtitle { font-family: 'Pinyon Script', cursive; font-size: 2rem; color: var(--text-muted); }
-.venue-address { font-family: 'Montserrat', sans-serif; font-size: 1.2rem; color: #ffffff; margin-bottom: 25px; letter-spacing: 1px; }
+.venue-subtitle {
+    font-family: 'Pinyon Script', cursive;
+    font-size: 2rem;
+    color: #ffffff;
+    text-shadow: 0 0 12px rgba(255, 255, 255, 0.5);
+}
+.venue-address {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.2rem;
+    color: #ffffff;
+    margin-bottom: 25px;
+    letter-spacing: 1px;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
+}
 
 .silver-line {
     width: 100%;
@@ -573,13 +632,15 @@ body {
     text-transform: uppercase; 
     letter-spacing: 2px; 
     display: inline-block; 
-    background: var(--realistic-silver-gradient);
+    background: var(--bright-silver-gradient);
     background-size: 240% auto;
     -webkit-background-clip: text; 
     background-clip: text; 
     color: transparent;
     animation: silverShimmer 6.5s linear infinite;
-    filter: drop-shadow(0 0 12px rgba(255, 255, 255, 0.35)); 
+    filter:
+        drop-shadow(0 0 8px rgba(255, 255, 255, 0.65))
+        drop-shadow(0 0 18px rgba(219, 234, 254, 0.5)); 
 }
 
 /* --- TÚNEL DE DESLIZAMIENTO DE FOTOS --- */
@@ -656,10 +717,15 @@ body {
     font-family: 'Cinzel Decorative', serif;
     font-size: 1.6rem;
     color: transparent;
-    background: var(--realistic-silver-gradient);
+    background: var(--bright-silver-gradient);
+    background-size: 240% auto;
     -webkit-background-clip: text;
     background-clip: text;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.35);
+    animation: silverShimmer 6.5s linear infinite;
+    filter:
+        drop-shadow(0 0 6px rgba(255, 255, 255, 0.6))
+        drop-shadow(0 0 14px rgba(219, 234, 254, 0.45));
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
     padding-bottom: 10px;
     display: inline-block;
     margin-bottom: 20px;
@@ -693,8 +759,8 @@ body {
 .map-frame.loaded { opacity: 1; }
 .map-loader { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 40px; height: 40px; border: 4px solid rgba(255,255,255,0.25); border-top: 4px solid #ffffff; border-radius: 50%; animation: spinLoader 1s linear infinite; z-index: 1; }
 
-.modal-btn-option { display: block; width: 80%; margin: 15px auto; padding: 15px; background: rgba(255, 255, 255, 0.06); border: 1px solid rgba(255, 255, 255, 0.65); color: #ffffff; font-family: 'Montserrat', sans-serif; text-transform: uppercase; text-decoration: none; border-radius: 10px; transition: all 0.3s; }
-.modal-btn-option:hover { background: #ffffff; color: var(--bg-deep); font-weight: bold; box-shadow: 0 0 20px rgba(255, 255, 255, 0.5); }
+.modal-btn-option { display: block; width: 80%; margin: 15px auto; padding: 15px; background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.75); color: #ffffff; font-family: 'Montserrat', sans-serif; text-transform: uppercase; text-decoration: none; border-radius: 10px; transition: all 0.3s; text-shadow: 0 0 8px rgba(255, 255, 255, 0.35); }
+.modal-btn-option:hover { background: #ffffff; color: var(--bg-deep); font-weight: bold; box-shadow: 0 0 20px rgba(255, 255, 255, 0.5); text-shadow: none; }
 
 .toast {
     visibility: hidden;
@@ -721,10 +787,10 @@ footer {
     position: relative;
     z-index: 10;
     padding: 25px 15px 40px;
-    color: var(--text-muted);
+    color: #ffffff;
     font-size: 0.95rem;
     letter-spacing: 1px;
-    text-shadow: 0 0 10px rgba(255, 255, 255, 0.25);
+    text-shadow: 0 0 12px rgba(255, 255, 255, 0.45);
 }
 
 @keyframes zoomIn { from { transform: scale(0.8); } to { transform: scale(1); } }
@@ -748,12 +814,12 @@ footer {
     
     .horizontal-separator-container { bottom: 0; top: auto; } 
     .horizontal-separator-img {
-    display: block;
-    width: 100%;
-    height: 120px;
-    object-fit: fill;
-    filter: drop-shadow(0 0 12px rgba(255, 255, 255, 0.3));
-}
+        display: block;
+        width: 100%;
+        height: 120px;
+        object-fit: fill;
+        filter: drop-shadow(0 0 12px rgba(255, 255, 255, 0.3));
+    }
     
     .hero-text-content { 
         margin-top: -50px; 
@@ -921,13 +987,14 @@ footer {
     font-weight: 500;
     text-transform: uppercase;
     letter-spacing: 1px;
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.45);
 }
 
 .rsvp-form input,
 .rsvp-form select,
 .rsvp-form textarea {
     background: rgba(255, 255, 255, 0.08);
-    border: 1px solid rgba(255, 255, 255, 0.45);
+    border: 1px solid rgba(255, 255, 255, 0.55);
     border-radius: 8px;
     padding: 12px 15px;
     color: #ffffff;
@@ -949,13 +1016,13 @@ footer {
 .rsvp-form select:focus,
 .rsvp-form textarea:focus {
     border-color: #ffffff;
-    box-shadow: 0 0 16px rgba(255, 255, 255, 0.35);
+    box-shadow: 0 0 16px rgba(255, 255, 255, 0.4);
     background: rgba(255, 255, 255, 0.14);
 }
 
 .rsvp-form input::placeholder,
 .rsvp-form textarea::placeholder {
-    color: rgba(226, 232, 240, 0.8);
+    color: rgba(241, 245, 249, 0.85);
 }
 
 .rsvp-form select {
@@ -979,7 +1046,7 @@ footer {
 }
 
 /* =========================================================
-   PANTALLA DE APERTURA (SPLASH SCREEN)
+   PANTALLA DE APERTURA (SPLASH SCREEN - SIN CAMBIOS)
    ========================================================= */
 .splash-overlay {
     position: fixed;
@@ -987,7 +1054,7 @@ footer {
     left: 0;
     width: 100%;
     height: 100vh;
-    background-color: #07090d; /* <-- Esto bloquea por completo el Hero de atrás */
+    background-color: #07090d;
     background-image:
         radial-gradient(circle at 50% 42%, rgba(255, 255, 255, 0.22) 0%, rgba(148, 163, 184, 0.12) 26%, transparent 58%),
         radial-gradient(circle at 50% 50%, #181d29 0%, #07090d 100%);
