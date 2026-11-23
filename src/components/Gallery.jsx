@@ -12,6 +12,8 @@ export default function Gallery() {
     '/images/foto6.jpeg',
     '/images/foto7.jpeg',
     '/images/foto8.jpeg',
+    '/images/foto9.jpeg',
+    '/images/foto10.jpeg',
   ];
 
   // TRUCO DE BUCLE: Duplicamos el arreglo 4 veces (40 fotos en total ahora). 

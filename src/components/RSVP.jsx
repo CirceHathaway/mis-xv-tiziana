@@ -103,7 +103,7 @@ export default function RSVP() {
       <div className="corner-deco corner-bottom-right"><img src={decoEsquinaBottom} alt="" /></div>
 
       <h2 style={{ fontSize: '1.8rem' }}>Confirmación de Asistencia</h2>
-      <p style={{ marginBottom: '30px' }}>Por favor confirma tu asistencia antes del 10 de Enero de 2027.</p>
+      <p style={{ marginBottom: '30px' }}>Por favor confirma tu asistencia antes del 1 de Febrero de 2027.</p>
       
       <form onSubmit={handleSubmit} className="rsvp-form">
         
