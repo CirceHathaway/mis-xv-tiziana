@@ -16,8 +16,8 @@ export default function EventDetails({ onOpenModal }) {
         
         <h2>Celebración</h2>
         <div className="big-date-container">
-          <div className="date-day-name">DOMINGO</div>
-          <div className="date-number-big">07</div>
+          <div className="date-day-name">SÁBADO</div>
+          <div className="date-number-big">13</div>
           <div className="date-month-year">de Febrero, 2027</div>
           <div className="time-box-styled"><div className="time-text">21:00 Hs</div></div>
           
@@ -27,7 +27,7 @@ export default function EventDetails({ onOpenModal }) {
         </div>
       </section>
 
-      {/* SECCIÓN 2: Lugar de Encuentro (provisional) */}
+      {/* SECCIÓN 2: Lugar de Encuentro */}
       <AnimatedSection>
         <div className="corner-deco corner-top-left"><img src={decoEsquinaTop} alt="" /></div>
         <div className="corner-deco corner-top-right"><img src={decoEsquinaTop} alt="" /></div>
@@ -36,8 +36,8 @@ export default function EventDetails({ onOpenModal }) {
         
         <h2>Lugar de Encuentro</h2>
         <div className="venue-subtitle">Te espero en...</div>
-        <div className="venue-name">Salón "SMILE Black"</div>
-        <div className="venue-address">Boulogne Sur Mer 633, Pacheco Buenos Aires</div>
+        <div className="venue-name">Salón "Antimi Eventos"</div>
+        <div className="venue-address">Rosario 4570, Adolfo Sourdeaux, Buenos Aires</div>
         
         <button className="btn" style={{ padding: '15px 35px', fontSize: '1rem' }} onClick={() => onOpenModal('map')}>
           ¿Cómo Llegar?

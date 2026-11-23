@@ -4,16 +4,14 @@ import React, { useState } from 'react';
 export default function Gallery() {
   // Tus 10 fotos originales (se agregaron 4 nuevas)
   const fotosOriginales = [
-    '/images/foto1.jpg',
-    '/images/foto2.jpg',
-    '/images/foto3.jpg',
-    '/images/foto4.jpg',
-    '/images/foto5.jpg',
-    '/images/foto6.jpg',
+    '/images/foto1.jpeg',
+    '/images/foto2.jpeg',
+    '/images/foto3.jpeg',
+    '/images/foto4.jpeg',
+    '/images/foto5.jpeg',
+    '/images/foto6.jpeg',
     '/images/foto7.jpeg',
     '/images/foto8.jpeg',
-    '/images/foto9.jpeg',
-    '/images/foto10.png'
   ];
 
   // TRUCO DE BUCLE: Duplicamos el arreglo 4 veces (40 fotos en total ahora). 

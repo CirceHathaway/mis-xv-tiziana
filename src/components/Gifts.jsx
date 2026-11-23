@@ -7,9 +7,8 @@ import decoEsquinaBottom from '../assets/image_2.png';
 export default function Gifts() {
   const [showToast, setShowToast] = useState(false);
 
-  const copyCBU = () => {
-    // RECORDATORIO: Cambiar por el CBU/Alias de Tiziana cuando lo tengas
-    navigator.clipboard.writeText("0000003100088083630080").then(() => {
+  const copyAlias = () => {
+    navigator.clipboard.writeText("tiziiii.738.mp").then(() => {
       setShowToast(true);
       setTimeout(() => setShowToast(false), 3000);
     });
@@ -26,14 +25,17 @@ export default function Gifts() {
         <i className="fas fa-gift" style={{ fontSize: '2.5rem', color: 'var(--silver)', marginBottom: '20px' }}></i>
         <h2>Regalos</h2>
         <p>El mejor regalo es tu presencia. Si deseas regalarme algo más que tu hermosa presencia...</p>
+        <p style={{ marginTop: '14px', fontSize: '1.1rem', letterSpacing: '0.5px' }}>
+          Alias: <strong>tiziiii.738.mp</strong>
+        </p>
         
-        <button className="btn" onClick={copyCBU}>
-          <i className="fas fa-university"></i> Número de CBU
+        <button className="btn" onClick={copyAlias}>
+          <i className="fas fa-copy"></i> Copiar Alias
         </button>
       </AnimatedSection>
 
       <div className={`toast ${showToast ? 'show' : ''}`}>
-        ¡CBU copiado al portapapeles!
+        ¡Alias copiado al portapapeles!
       </div>
     </>
   );
